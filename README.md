@@ -18,6 +18,7 @@ Change the node affinity as per needs in helmechart affinity: {} section
 Use the below commands to get the values
 
 helm show values elastic/eck-operator >> values.yml  
+
 helm install elastic-operator elastic/eck-operator -f values.yml -n elastic-system --create-namespace
 
 To Change node affinty
