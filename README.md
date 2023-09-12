@@ -8,11 +8,11 @@ STEPS
 
 Install ECK custom resource definations (CRDS) using helm chart 
 
-_helm repo add elastic https://helm.elastic.co
+helm repo add elastic https://helm.elastic.co
 
 helm repo update
 
-helm install elastic-operator elastic/eck-operator -n elastic-system --create-namespace_
+helm install elastic-operator elastic/eck-operator -n elastic-system --create-namespace
 
 Change the node affinity as per needs in helmechart affinity: {} section
 Use the below commands to get the values
