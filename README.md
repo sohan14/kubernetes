@@ -31,6 +31,7 @@ affinity:
           operator: In
           values:
           - elk-pool
+          
 
 **2. Install Elastic Search Cluster**     
 kubectl get elasticsearch
