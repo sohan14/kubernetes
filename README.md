@@ -38,6 +38,8 @@ kubectl get elasticsearch
 kubectl get pods 
 kubectl get svc 
 PASSWORD=$(kubectl get secret quickstart-es-elastic-user -o go-template='{{.data.elastic | base64decode}}')
+PASSWORD=$(kubectl get secret elasticsearch-es-elastic-user -n elk -o go-template='{{.data.elastic | base64decode}}')
+
 curl -u "elastic:$PASSWORD" -k "https://quickstart-es-http:9200"
 kubectl port-forward service/quickstart-es-http 9200
 curl -u "elastic:$PASSWORD" -k "https://localhost:9200"
@@ -47,6 +49,8 @@ kubectl get elasticsearch
 kubectl get pods 
 kubectl get svc 
 kubectl port-forward service/quickstart-kb-http 5601
+kubectl port-forward service/kibana-kb-http  5601 -n elk
+
 In there we need to configure Discover 
 
 **4. Install Filebeats**
