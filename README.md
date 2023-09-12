@@ -7,7 +7,6 @@ STEPS
 **1 . Deploy ECK(Elastic Cloud on Kubernetes) with helm**
 
 Install ECK custom resource definations (CRDS) using helm chart 
-
 helm repo add elastic https://helm.elastic.co
 
 helm repo update
