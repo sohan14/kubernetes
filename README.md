@@ -50,6 +50,7 @@ kubectl get pods
 kubectl get svc 
 kubectl port-forward service/quickstart-kb-http 5601
 kubectl port-forward service/kibana-kb-http  5601 -n elk
+https://localhost:5601
 
 In there we need to configure Discover 
 
