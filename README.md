@@ -59,6 +59,22 @@ kubectl get beats
 kubectl get pods 
 
 
+**5. For custom Index**
+curl -X GET "http://http://172.16.11.148:9200/_cat/indices?v" -u "elastic:0ErrTIY2E55rkXGl7fAA"
+
+curl -X PUT "http://172.16.11.148:9200/_template/my_template_name" -H "Content-Type: application/json" -u "elastic:0ErrTIY2E55rkXGl7fAA" -d '{
+  "index_patterns": ["aks-*"],
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  }
+}'
+
+to get shards
+curl -u "elastic:0ErrTIY2E55rkXGl7fAA" "http://172.16.11.148:9200/_cat/shards"
+
+to delete shards 
+curl -X DELETE -u "elastic:0ErrTIY2E55rkXGl7fAA" "http://172.16.11.148:9200/uat_webserver-2022.06.10"
 
 
 
